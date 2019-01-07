@@ -153,8 +153,8 @@ install_ssr() {
                      yum install -y wget
                      ;;
         esac
-	chmod +x shadowsocksR.sh
-	./shadowsocksR.sh 2>&1 | tee shadowsocksR.log
+	chmod +x ssr-server/shadowsocksR.sh
+	ssr-server/shadowsocksR.sh 2>&1 | tee shadowsocksR.log
 }
 
 check_os_() {

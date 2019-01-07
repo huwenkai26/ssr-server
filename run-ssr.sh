@@ -21,11 +21,14 @@ case $os in
         'ubuntu'|'debian')
      apt-get -y update
              apt-get -y install git
+             yum update -y nss curl libcurl
              ;;
         'centos')
              yum install -y git
              ;;
 esac
-git clone
-ss-fly/ss-fly.sh -ssr
+git config --global user.name "hwk"
+git config --global user.email "huwenkai26@gmail.com"
+git clone https://github.com/huwenkai26/ssr-server.git
+ssr-server/ss-fly.sh -ssr
 

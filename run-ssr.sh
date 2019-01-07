@@ -32,7 +32,7 @@ while true
     echo "---------------------------"
     echo
     break
-donegit
+done
 while true
     do
     echo "ssh 端口:"

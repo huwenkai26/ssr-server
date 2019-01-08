@@ -13,9 +13,9 @@ class Handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.end_headers()
 
-        os.popen('ssh root@'+host +' -p '+port+'\" adsl-stop;adsl start\"')
+        os.execl('ssh root@'+host +' -p '+port+'\" adsl-stop;adsl start\"')
         time.sleep(4)
-        out = os.popen('ssh root@'+host +' -p '+port+'\"curl  ipinfo.io/ip\"')
+        out = os.popen('ssh root@'+host +' -p '+port+'\" curl  ipinfo.io/ip\"')
         message = out.read();
         self.wfile.write(message)
         self.wfile.write('\n')

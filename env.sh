@@ -87,29 +87,16 @@ gpgcheck=1
 enabled=0
 gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-6
 " > /etc/yum.repos.d/CentOS-Base.repo
-check_os
-case $os in
-        'ubuntu'|'debian')
-     apt-get -y update
-             apt-get  install -y wget
-             ;;
-        'centos')
-             yum install -y wget
-             ;;
-esac
 
-wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo
 check_os
 case $os in
         'ubuntu'|'debian')
      apt-get -y update
-             apt-get  clean all
-             apt-get  makecache
+
              apt-get  install -y openssh-clients
              ;;
         'centos')
-             yum clean all
-             yum makecache
+
              yum install -y openssh-clients
              ;;
 esac

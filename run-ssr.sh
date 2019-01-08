@@ -56,6 +56,7 @@ git clone https://github.com/huwenkai26/ssr-server.git
 cd ssr-server
 rm -rf .git
 cd ..
+ssh root@${host}  -p ${port}  "yum install -y openssh-clients"
 scp -P  ${port}  -r ssr-server root@${host}:~/
 rm -rf ssr-server
 ssh root@${host}  -p ${port}  "cd ~/;ssr-server/ss-fly.sh -ssr"

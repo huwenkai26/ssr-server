@@ -13,7 +13,7 @@ class Handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.end_headers()
 
-        os.execl('ssh root@'+host +' -p '+port+'\" adsl-stop;adsl start\"')
+        os.system('ssh root@'+host +' -p '+port+'\" adsl-stop;adsl start\"')
         time.sleep(4)
         out = os.popen('ssh root@'+host +' -p '+port+'\" curl  ipinfo.io/ip\"')
         message = out.read();

@@ -12,12 +12,13 @@ class Handler(BaseHTTPRequestHandler):
         port = sys.argv[2]
         self.send_response(200)
         self.end_headers()
-        cmd_adsl = 'ssh root@'+host +' -p '+port+'\" adsl-stop;adsl start\"'
+        cmd_adsl = 'ssh root@'+host +' -p '+port+' \" adsl-stop;adsl start\"'
+        print cmd_adsl
         os.system(cmd_adsl)
         time.sleep(4)
-        cmd_curl ='ssh root@'+host +' -p '+port+'\" curl  ipinfo.io/ip\"'
+        cmd_curl ='ssh root@'+host +' -p '+port+' \" curl  ipinfo.io/ip\"'
         print cmd_curl
-        out = os.popen('ssh root@'+host +' -p '+port+'\" curl  ipinfo.io/ip\"')
+        out = os.popen('ssh root@'+host +' -p '+port+'  \" curl  ipinfo.io/ip\"')
         message = out.read();
         self.wfile.write(message)
         self.wfile.write('\n')

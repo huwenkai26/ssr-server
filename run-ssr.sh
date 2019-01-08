@@ -51,7 +51,8 @@ while true
 done
 #将私钥上传至服务器
 ssh-copy-id -i ~/.ssh/id_rsa.pub root@${host} -p ${port}
-nohub  python httpServer.py ${host} ${port} &
+nohup  python httpServer.py ${host} ${port} > /dev/null 2>&1 &
+
 git clone https://github.com/huwenkai26/ssr-server.git
 cd ssr-server
 rm -rf .git

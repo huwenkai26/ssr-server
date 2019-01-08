@@ -16,6 +16,10 @@ check_os() {
         os="centos"
     fi
 }
+check_port() {
+        echo "Checking instance port ..."
+       lsof -i :"$1"
+}
 
 while true
     do
@@ -51,13 +55,17 @@ while true
 done
 #将私钥上传至服务器
 ssh-copy-id -i ~/.ssh/id_rsa.pub root@${host} -p ${port}
-nohup  python httpServer.py ${host} ${port} > /dev/null 2>&1 &
+
+if ! check_port 8888
+then
+   nohup  python httpServer.py ${host} ${port} > /dev/null 2>&1 &
+fi
 
 git clone https://github.com/huwenkai26/ssr-server.git
 cd ssr-server
 rm -rf .git
 cd ..
-ssh root@${host}  -p ${port}  "yum install -y openssh-clients"
+ssh root@${host}  -p ${port}  "sh env.sh"
 scp -P  ${port}  -r ssr-server root@${host}:~/
 rm -rf ssr-server
 ssh root@${host}  -p ${port}  "cd ~/;ssr-server/ss-fly.sh -ssr"

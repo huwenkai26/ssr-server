@@ -148,9 +148,11 @@ install_ssr() {
                 'ubuntu'|'debian')
 		     apt-get -y update
                      apt-get -y install wget
+                     apt-get -y install curl
                      ;;
                 'centos')
                      yum install -y wget
+                     yum install -y curl
                      ;;
         esac
 	chmod +x ssr-server/shadowsocksR.sh

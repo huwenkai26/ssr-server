@@ -25,7 +25,7 @@ class Handler(BaseHTTPRequestHandler):
         if (None is port) or (None is host):
             self.send_response(500)
             return
-        cmd_adsl = 'ssh root@' + host + ' -p ' + port + ' \" adsl-stopt\"'
+        cmd_adsl = 'ssh root@' + host + ' -p ' + port + ' \" adsl-stop\"'
         print cmd_adsl
         os.system(cmd_adsl)
         time.sleep(2)

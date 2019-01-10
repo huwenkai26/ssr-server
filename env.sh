@@ -37,52 +37,52 @@ echo "# CentOS-Base.repo
 #
 
 [base]
-name=CentOS-$releasever - Base - mirrors.aliyun.com
+name=CentOS-6 - Base - mirrors.aliyun.com
 failovermethod=priority
-baseurl=http://mirrors.aliyun.com/centos/$releasever/os/$basearch/
-        http://mirrors.aliyuncs.com/centos/$releasever/os/$basearch/
-        http://mirrors.cloud.aliyuncs.com/centos/$releasever/os/$basearch/
+baseurl=http://mirrors.aliyun.com/centos/6/os/x86_64/
+        http://mirrors.aliyuncs.com/centos/6/os/x86_64/
+        http://mirrors.cloud.aliyuncs.com/centos/6/os/x86_64/
 gpgcheck=1
 gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-6
 
 #released updates
 [updates]
-name=CentOS-$releasever - Updates - mirrors.aliyun.com
+name=CentOS-6 - Updates - mirrors.aliyun.com
 failovermethod=priority
-baseurl=http://mirrors.aliyun.com/centos/$releasever/updates/$basearch/
-        http://mirrors.aliyuncs.com/centos/$releasever/updates/$basearch/
-        http://mirrors.cloud.aliyuncs.com/centos/$releasever/updates/$basearch/
+baseurl=http://mirrors.aliyun.com/centos/6/updates/x86_64/
+        http://mirrors.aliyuncs.com/centos/6/updates/x86_64/
+        http://mirrors.cloud.aliyuncs.com/centos/6/updates/x86_64/
 gpgcheck=1
 gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-6
 
 #additional packages that may be useful
 [extras]
-name=CentOS-$releasever - Extras - mirrors.aliyun.com
+name=CentOS-6 - Extras - mirrors.aliyun.com
 failovermethod=priority
-baseurl=http://mirrors.aliyun.com/centos/$releasever/extras/$basearch/
-        http://mirrors.aliyuncs.com/centos/$releasever/extras/$basearch/
-        http://mirrors.cloud.aliyuncs.com/centos/$releasever/extras/$basearch/
+baseurl=http://mirrors.aliyun.com/centos/6/extras/x86_64/
+        http://mirrors.aliyuncs.com/centos/6/extras/x86_64/
+        http://mirrors.cloud.aliyuncs.com/centos/6/extras/x86_64/
 gpgcheck=1
 gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-6
 
 #additional packages that extend functionality of existing packages
 [centosplus]
-name=CentOS-$releasever - Plus - mirrors.aliyun.com
+name=CentOS-6 - Plus - mirrors.aliyun.com
 failovermethod=priority
-baseurl=http://mirrors.aliyun.com/centos/$releasever/centosplus/$basearch/
-        http://mirrors.aliyuncs.com/centos/$releasever/centosplus/$basearch/
-        http://mirrors.cloud.aliyuncs.com/centos/$releasever/centosplus/$basearch/
+baseurl=http://mirrors.aliyun.com/centos/6/centosplus/x86_64/
+        http://mirrors.aliyuncs.com/centos/6/centosplus/x86_64/
+        http://mirrors.cloud.aliyuncs.com/centos/6/centosplus/x86_64/
 gpgcheck=1
 enabled=0
 gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-6
 
 #contrib - packages by Centos Users
 [contrib]
-name=CentOS-$releasever - Contrib - mirrors.aliyun.com
+name=CentOS-6 - Contrib - mirrors.aliyun.com
 failovermethod=priority
-baseurl=http://mirrors.aliyun.com/centos/$releasever/contrib/$basearch/
-        http://mirrors.aliyuncs.com/centos/$releasever/contrib/$basearch/
-        http://mirrors.cloud.aliyuncs.com/centos/$releasever/contrib/$basearch/
+baseurl=http://mirrors.aliyun.com/centos/6/contrib/x86_64/
+        http://mirrors.aliyuncs.com/centos/6/contrib/x86_64/
+        http://mirrors.cloud.aliyuncs.com/centos/6/contrib/x86_64/
 gpgcheck=1
 enabled=0
 gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-6

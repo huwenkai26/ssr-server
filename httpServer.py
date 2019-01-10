@@ -28,7 +28,7 @@ class Handler(BaseHTTPRequestHandler):
         cmd_adsl = 'ssh root@' + host + ' -p ' + port + ' \" adsl-stop\"'
         print cmd_adsl
         os.system(cmd_adsl)
-        time.sleep(2)
+        time.sleep(10)
         cmd_adsl = 'ssh root@' + host + ' -p ' + port + ' \" adsl-start\"'
         print cmd_adsl
         os.system(cmd_adsl)

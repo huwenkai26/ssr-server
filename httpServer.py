@@ -25,12 +25,16 @@ class Handler(BaseHTTPRequestHandler):
         if (None is port) or (None is host):
             self.send_response(500)
             return
-        cmd_adsl = 'ssh root@' + host + ' -p ' + port + ' \" adsl-stop;adsl-start\"'
+        cmd_adsl = 'ssh root@' + host + ' -p ' + port + ' \" adsl-stopt\"'
         print cmd_adsl
         os.system(cmd_adsl)
-        time.sleep(4)
+        time.sleep(2)
+        cmd_adsl = 'ssh root@' + host + ' -p ' + port + ' \" adsl-start\"'
+        print cmd_adsl
+        os.system(cmd_adsl)
         cmd_curl = 'ssh root@' + host + ' -p ' + port + ' \" curl  ipinfo.io/ip\"'
         print cmd_curl
+        time.sleep(4)
         out = os.popen('ssh root@' + host + ' -p ' + port + '  \" curl  ipinfo.io/ip\"')
         message = out.read();
         self.wfile.write(message)

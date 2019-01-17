@@ -6,5 +6,6 @@ check_port() {
 }
 if ! check_port 8888
 then
+     echo "开启服务 ..."
    nohup  python httpServer.py  > /dev/null 2>&1 &
 fi

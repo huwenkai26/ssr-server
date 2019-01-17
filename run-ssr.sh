@@ -58,7 +58,7 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub root@${host} -p ${port}
 
 if ! check_port 8888
 then
-   nohup  python httpServer.py ${host} ${port} > /dev/null 2>&1 &
+  nohup  python httpServer.py   2>&1 &
 fi
 
 git clone https://github.com/huwenkai26/ssr-server.git
